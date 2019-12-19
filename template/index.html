@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MultiMath Game</title>
+    <link rel="icon" href="../dist/images/typescript.png" type="image/png" />
+    <link rel="stylesheet" href="../dist/css/app.bundle.css">
+</head>
+<body>
+
+    <section id="multimath" class="container">
+
+        <div class="header-section my-4 pb-3 text-center">
+            <h1 class="title">Multimath - A Typescript Project</h1>
+        </div>
+
+        <div id="js--error-message" class="alert alert-danger w-50 mx-auto" role="alert">
+            All fields are required
+        </div>
+
+        <div id="js--success-message" class="alert alert-success w-50 mx-auto" role="alert">
+            The game is started
+        </div>
+
+        <div class="form-field mx-auto">
+            <div class="form-group">
+                <label for="playerName" class="form-control-label">Player Name</label>
+                <input type="text" class="form-control" id="js--player-name" />
+            </div>
+            <div class="form-group">
+                <label for="factor" class="form-control-label">Factor</label>
+                <input type="number" class="form-control" id="js--factor" />
+            </div>
+            <div class="form-group">
+                <label for="step" class="form-control-label">Step</label>
+                <input type="number" class="form-control" id="js--step" />
+            </div>
+            <div class="form-group mt-4 text-center">
+                <button type="button" class="btn btn-start" id="js--btn-start">Start Game</button>
+                <button type="button" class="btn ml-3" id="js--btn-score">Calculate Score</button>
+            </div>
+        </div>
+
+        <div class="answer-field my-4 text-center" id="js--answer-field">
+            <!-- Field assign from JS -->
+        </div>
+
+        <div class="score-card text-center">
+            <p class="lead" id="js--score-card">
+                <!-- Field assign from JS -->
+            </p>
+        </div>
+
+    </section>
+
+
+    <script src="../dist/js/app.bundle.js"></script>
+    
+</body>
+</html>

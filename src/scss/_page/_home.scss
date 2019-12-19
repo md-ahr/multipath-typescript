@@ -1,0 +1,103 @@
+#multimath {
+
+    .header-section {
+        border-bottom: 1px solid darken($defaultColor, 10);
+
+        .title {
+            font-size: $titleSize;
+            font-family: $ibmSemiBold;
+            color: $titleColor;
+        }
+    }
+
+    #js--error-message, #js--success-message {
+        display: none;
+        opacity: 0;
+        @include transition (opacity, 1s, ease);
+    }
+
+    .form-field {
+        width: 50%;
+
+        .form-group {
+
+            .form-control-label {
+                font-size: $labelSize;
+                font-family: $ibmMedium;
+                padding-bottom: 0.325em;
+                color: $labelColor;
+            }
+
+            .form-control {
+                width: 100%;
+                height: 50px;
+                outline: none;
+                box-shadow: none;
+                border-color: darken($defaultColor, 15);
+                font-family: $ibmRegular;
+                @include transition (all, 0.5s, ease);
+
+                &:focus {
+                    border-color: lighten($labelColor, 20);;
+                }
+            }
+
+            .btn {
+                background-color: $defaultColor;
+                color: $buttonColor;
+                border: 1px solid $buttonColor;
+                padding: 0.625em 1.625em;
+                font-family: $ibmMedium;
+                font-size: $buttonSize;
+                outline: none;
+                box-shadow: none;
+                @include transition (all, 0.5s, ease);
+
+                &:hover {
+                    background-color: $buttonColor;
+                    color: $defaultColor;
+                }
+
+                &.btn-start {
+                    color: $buttonColor2;
+                    border: 1px solid $buttonColor2;
+
+                    &:hover {
+                        background-color: $buttonColor2;
+                        color: $defaultColor;
+                    }
+                }
+            }
+        }
+    }
+
+    .answer-field {
+
+        span {
+            font-size: $buttonSize;
+            font-family: $ibmMedium;
+        }
+
+        .form-control {
+            width: 7%;
+            outline: none;
+            box-shadow: none;
+            text-align: center;
+            font-family: $ibmRegular;
+            border-color: darken($defaultColor, 15);
+
+            &:focus {
+                border-color: darken($defaultColor, 30);;
+            }
+        }
+    }
+
+    .score-card {
+
+        p {
+            color: $textColor;
+            font-family: $ibmMedium;
+            font-size: $textSize;
+        }
+    }
+}
