@@ -1,3 +1,5 @@
+import Swal from 'sweetalert2';
+
 interface RequiredField {
     playerName?: string;
     factor?: number;
@@ -79,8 +81,17 @@ class MultimathGame implements RequiredField {
         for (let i: number = 0; i < ansArr.length; i++)  {
             if (ansArr[i] === ansInputArr[i]) {
                 res.push(ansArr[i]);
+                answerInput.forEach((item: any) => {
+                    if (ansInputArr[i] == item.value) {
+                        item.style.borderColor = '#ddd';
+                    }
+                });
             } else {
-                console.log(i);
+                answerInput.forEach((item: any) => {
+                    if (ansInputArr[i] == item.value) {
+                        item.style.borderColor = 'red';
+                    }
+                });
             }
         }
 
@@ -88,15 +99,23 @@ class MultimathGame implements RequiredField {
         const scoreCard = (<HTMLElement>document.querySelector('#js--score-card'));
         const content: string = `${items[0]} score: correct ${correctLength} out of ${items[2]}`;
         scoreCard.innerHTML = content;
+
+        if (correctLength === items[2]) {
+            Swal.fire({
+                title: 'Congratulations!'
+            });
+        }
         
     }
 }
 
 const multimath: MultimathGame = new MultimathGame();
 
-const startField: HTMLElement | null = document.querySelector('#js--btn-start');
+const startField: HTMLElement = (<HTMLElement>document.querySelector('#js--btn-start'));
 
-const scoreField: HTMLElement | null = document.querySelector('#js--btn-score');
+const scoreField: HTMLElement = (<HTMLElement>document.querySelector('#js--btn-score'));
+
+const resetBtn: HTMLElement = (<HTMLElement>document.getElementById('js--btn-reset'));
 
 startField?.addEventListener('click', (): void => {
     let errName: string = '';
@@ -147,4 +166,8 @@ startField?.addEventListener('click', (): void => {
 
 scoreField?.addEventListener('click', (): void => {
     multimath.calculateScore();
+});
+
+resetBtn.addEventListener('click', () => {
+    location.reload();
 });

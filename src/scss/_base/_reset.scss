@@ -5,3 +5,10 @@
     font-family: $ibmRegular;
     box-sizing: border-box;
 }
+
+body {
+
+    button {
+        box-shadow: none!important;
+    }
+}
