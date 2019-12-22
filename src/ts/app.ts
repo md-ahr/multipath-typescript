@@ -102,7 +102,11 @@ class MultimathGame implements RequiredField {
 
         if (correctLength === items[2]) {
             Swal.fire({
-                title: 'Congratulations!'
+                html: '<h3 class="text-success">Congratulations!</h3>'
+            });
+        } else {
+            Swal.fire({
+                html: '<h3 class="text-danger">Oops! input wrong answer!</h3>'
             });
         }
         
