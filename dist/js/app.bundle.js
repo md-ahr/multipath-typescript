@@ -20528,7 +20528,7 @@ var resetBtn = document.getElementById('js--btn-reset');
         });
         if (stepField.value > '10') {
             stepField.style.borderColor = 'red';
-            stepField.insertAdjacentHTML('afterend', "<p class=\"text-danger\">You can input maximum 10</p>");
+            stepField.insertAdjacentHTML('afterend', "<p class=\"small text-danger\">You can input maximum 10</p>");
         }
         setTimeout(function () {
             errMessage_1.style.opacity = '1';

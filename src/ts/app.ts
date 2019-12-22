@@ -150,7 +150,7 @@ startField?.addEventListener('click', (): void => {
         });
         if (stepField.value > '10') {
             stepField.style.borderColor = 'red';
-            stepField.insertAdjacentHTML('afterend', `<p class="text-danger">You can input maximum 10</p>`);
+            stepField.insertAdjacentHTML('afterend', `<p class="small text-danger">You can input maximum 10</p>`);
         }
         setTimeout(() => {
             errMessage.style.opacity = '1';
