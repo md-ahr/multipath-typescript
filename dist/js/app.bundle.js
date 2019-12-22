@@ -20426,6 +20426,9 @@ var MultimathGame = (function () {
         if (playerName === '' || factor === '' || step === '') {
             return true;
         }
+        else if (step > '10') {
+            return true;
+        }
         else {
             return false;
         }
@@ -20523,6 +20526,10 @@ var resetBtn = document.getElementById('js--btn-reset');
                 item.insertAdjacentHTML('afterend', errName);
             }
         });
+        if (stepField.value > '10') {
+            stepField.style.borderColor = 'red';
+            stepField.insertAdjacentHTML('afterend', "<p class=\"text-danger\">You can input maximum 10</p>");
+        }
         setTimeout(function () {
             errMessage_1.style.opacity = '1';
         }, 100);
