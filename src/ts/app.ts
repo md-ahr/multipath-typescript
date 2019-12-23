@@ -31,7 +31,7 @@ class MultimathGame implements RequiredField {
         const step = (<HTMLInputElement>document.querySelector('#js--step')).value;
         if (playerName === '' || factor === '' || step === '') {
             return true;
-        } else if (step > '10') {
+        } else if (parseFloat(step) > 10) {
             return true;
         } else {
             return false;
@@ -148,7 +148,7 @@ startField?.addEventListener('click', (): void => {
                 item.insertAdjacentHTML('afterend', errName);
             }
         });
-        if (stepField.value > '10') {
+        if (stepField.value > 10) {
             stepField.style.borderColor = 'red';
             stepField.insertAdjacentHTML('afterend', `<p class="small text-danger">You can input maximum 10</p>`);
         }
